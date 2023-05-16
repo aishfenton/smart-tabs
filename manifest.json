@@ -1,0 +1,19 @@
+{
+    "manifest_version": 3,
+    "name": "Smart Tabs for Chrome",
+    "version": "0.1",
+    "icons": {
+      "16": "img/bolt-solid-16.png",
+      "32": "img/bolt-solid-32.png",
+      "48": "img/bolt-solid-48.png",
+      "128": "img/bolt-solid-128.png"
+    },
+    "background": {
+      "service_worker": "st_background.js"
+    },
+    "permissions": [
+        "tabGroups", 
+        "tabs", 
+        "storage"
+    ]
+  }
