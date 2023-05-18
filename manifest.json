@@ -8,8 +8,12 @@
       "48": "img/bolt-solid-48.png",
       "128": "img/bolt-solid-128.png"
     },
+    "action": {
+      "default_popup": "popup.html"
+    },
     "background": {
-      "service_worker": "st_background.js"
+      "service_worker": "st_background.js",
+      "type": "module"
     },
     "permissions": [
         "tabGroups", 

@@ -1,4 +1,7 @@
 body {
+    background-color: rgb(21, 21, 21);
+    color: white;
+    font: 1rem 'Open Sans', sans-serif;
     width: 20rem;
   }
   
@@ -8,17 +11,7 @@ body {
     margin: 1rem 0;
   }
   
-  li {
-    padding: 0.25rem;
-  }
-  li:nth-child(odd) {
-    background: #80808030;
-  }
-  li:nth-child(even) {
-    background: #ffffff;
-  }
-  
   h3,
   p {
-    margin: 0;
+    margin: 10;
   }
