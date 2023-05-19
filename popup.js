@@ -4,7 +4,9 @@ const mergeBtn = document.querySelector('#mergeBtn');
 mergeBtn.addEventListener('click', async () => { mergeTabs() });
 
 async function mergeTabs() {
-    const tabs = await chrome.tabs.query({}); 
+    const tabs = await chrome.tabs.query({
+        "windowType": "normal"
+    }); 
     const windowId = (await chrome.windows.getLastFocused({})).id
 
     for (const tab of tabs) {
