@@ -1,17 +1,40 @@
 body {
-    background-color: rgb(21, 21, 21);
+    background-color: rgb(41, 41, 41);
     color: white;
-    font: 1rem 'Open Sans', sans-serif;
-    width: 20rem;
+    font: 1rem Sans-Serif;
+    width: 15rem;
+    margin: 20px;
   }
   
-  ul {
-    list-style-type: none;
-    padding-inline-start: 0;
-    margin: 1rem 0;
-  }
-  
-  h3,
+  h1,
   p {
-    margin: 10;
+    font-size: 1.2rem;
+    margin: 10px 0px;
+  }
+
+  .button-64 {
+    background-color: rgb(5, 6, 45);
+    font: 0.8rem Sans-Serif; 
+    align-items: center;
+    box-shadow: rgba(151, 65, 252, 0.2) 0 15px 30px -5px;
+    box-sizing: border-box;
+    color: #FFFFFF;
+    display: flex;
+    justify-content: center;
+    padding: 1px;
+    cursor: pointer;
+  
+    border-width: 2px;
+    border-style: solid;
+    border-image: linear-gradient(to right, darkblue, darkorchid) 1;
+  }
+  
+  .button-64:active,
+  .button-64:hover {
+    background-color: rgb(64, 64, 64);
+  }
+  
+  .button-64 span {
+    background: none;
+    padding: 6px 10px;
   }

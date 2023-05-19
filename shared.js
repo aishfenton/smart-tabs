@@ -1,6 +1,5 @@
 
-const oneDay = 1000 * 60;
-// const oneDay = 1000 * 60 * 60 * 24; 
+const oneDay = 1000 * 60 * 60 * 24;
 
 async function groupTabs() {
     const data = await tabData();
@@ -11,21 +10,24 @@ async function groupTabs() {
         };
     });
 
-    await makeGroup(tabDataWithDays.filter((tab) => tab.daysSinceNow === 0), "Today", "green")
-    await makeGroup(tabDataWithDays.filter((tab) => tab.daysSinceNow > 0 && tab.daysSinceNow <= 7), "This Week", "blue")
-    await makeGroup(tabDataWithDays.filter((tab) => tab.daysSinceNow > 7), "Older", "grey")
+    await makeGroup(tabDataWithDays.filter((tab) => tab.daysSinceNow === 0), "Today", "green", false, 0)
+    await makeGroup(tabDataWithDays.filter((tab) => tab.daysSinceNow > 0 && tab.daysSinceNow <= 7), "This Week", "blue", true, 1)
+    await makeGroup(tabDataWithDays.filter((tab) => tab.daysSinceNow > 7), "Older", "grey", true, 2)
 }
 
-async function makeGroup(tabs, groupTitle, groupColor) {
+async function makeGroup(tabs, groupTitle, groupColor, collapsed, index) {
     if (tabs.length > 0) {
         const groupId = await chrome.tabs.group({
             tabIds: tabs.map((tab) => tab.id),
         });
 
-        chrome.tabGroups.update(groupId, {
+        await chrome.tabGroups.update(groupId, {
             color: groupColor,
             title: groupTitle,
+            collapsed: collapsed
         });
+
+        await chrome.tabGroups.move(groupId, { index: index })
     }
 }
 
